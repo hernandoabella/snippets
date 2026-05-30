@@ -16,6 +16,7 @@ import {
 import { FaJava, FaPhp } from "react-icons/fa";
 import { TbBrandCSharp, TbBrandSwift, TbBrandKotlin } from "react-icons/tb";
 import { FiCode, FiSearch, FiX } from "react-icons/fi";
+import Image from "next/image";
 
 // ─── Types ──────────────────────────────────────────────────────────────
 
@@ -540,11 +541,24 @@ export default function Home() {
       
       <main className="min-h-screen bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 py-6">
-          {/* Header */}
+          {/* Header with Logo */}
           <div className="text-center mb-6">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <FiCode className="text-blue-600" size={28} />
-              <h1 className="text-3xl font-bold text-gray-900">Code Snippets</h1>
+            <div className="flex items-center justify-center gap-3 mb-2">
+              {/* Logo */}
+              <div className="w-10 h-10 relative">
+                <Image
+                  src="/logo.png"
+                  alt="Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div className="flex items-center gap-2">
+                
+                <h1 className="text-3xl font-bold text-gray-900">Code Snippets</h1>
+              </div>
             </div>
             <p className="text-sm text-gray-500">
               {totalSnippets} useful snippets across {languages.length} languages
